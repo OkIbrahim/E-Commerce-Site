@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="script.js" defer></script>
+    <title>E-COMMERCE PLATFORM</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <img
+        src="images/e-commerce-main-logo-(1).jpg"
+        alt="E-commerce Platform Logo"
+        class="logo"
+      />
+
+      <button class="btn-mobile-nav menu-btn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <button class="btn-mobile-nav close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <h3 class="site-title">TJ APPARELS</h3>
+
+      <!-- Mobile Navigation Overlay -->
+      <div class="nav-overlay"></div>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#" class="nav-link">Home</a></li>
+        </ul>
+        <ul>
+          <li><a href="#products" class="nav-link">Products</a></li>
+        </ul>
+        <ul>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+        <ul>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Cart Icon with Dynamic Badge -->
+      <div class="cart-container">
+        <button
+          class="nav-cart-btn"
+          id="open-cart-btn"
+          aria-label="shopping-cart"
+        >
+          <i class="fa-solid fa-cart-plus"></i>
+          <!-- 🛒 -->
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Control Bar -->
+    <div class="control-bar">
+      <!-- Search Input -->
+      <div class="control-group">
+        <input
+          type="text"
+          id="product-search"
+          placeholder="Search products..."
+          aria-label="Search products"
+        />
+      </div>
+
+      <!-- Filter Category (DropDown) -->
+      <div class="control-group">
+        <select id="category-filter" aria-label="Filter by category">
+          <option value="all">All Categories</option>
+          <option value="shirts">Shirts</option>
+          <option value="jeans">Jeans</option>
+          <option value="jackets">Jackets</option>
+          <option value="shoes">Shoes</option>
+        </select>
+      </div>
+
+      <!-- Sort Dropdown -->
+      <div class="control-group">
+        <select id="sort-products" aria-label="Sort products">
+          <option value="default">Sort By: Featured</option>
+          <option value="price-low">Price: Low To High</option>
+          <option value="price-high">Price: High To Low</option>
+          <option value="name-asc">Name: A to Z</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+      <div class="products-grid" id="products-grid"></div>
+    </section>
+
+    <!-- Backdrop Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Slide IN/OUT Cart Drawer -->
+    <div class="cart-drawer" id="cart-drawer">
+      <header class="cart-header">
+        <h2>Your Cart</h2>
+        <button class="close-cart-btn" id="close-cart-btn">&times;</button>
+      </header>
+
+      <!-- Dynamic Items Container -->
+      <div id="cart-items-container" class="cart-items-container">
+        <!-- JavaScript will populate items here dynamically -->
+        <p class="empty-message">Your cart is empty.</p>
+      </div>
+
+      <!-- Footer Pricing & Checkout -->
+      <div class="cart-footer">
+        <div class="total-display">
+          <span>Total Amount:</span>
+          <span id="cart-total-price" class="price">$0.00</span>
+        </div>
+        <button id="checkout-btn" class="checkout-btn">
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+      <div class="about-container">
+        <div class="about-content">
+          <span class="section-tag">WHO WE ARE</span>
+
+          <h2>Style That Speaks. <span>Confidence That Shows.</span></h2>
+
+          <p>
+            Welcome to TJ APPARELS, your destination for stylish, comfortable,
+            and affordable fashion. We believe that what you wear should express
+            who you are and make you feel confident wherever you go.
+          </p>
+
+          <p>
+            From everyday T-shirts and classic jeans to standout jackets and
+            stylish shoes, our collection is designed to help you create a look
+            that is uniquely yours.
+          </p>
+
+          <p>
+            Our mission is simple: to make great style accessible while giving
+            you a smooth and enjoyable shopping experience from browsing to
+            checkout.
+          </p>
+
+          <a href="#products" class="about-btn">
+            Explore Our Collection
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="about-visual">
+          <div class="about-image-wrapper">
+            <img
+              src="./images/T-Shirt_1 (1).jpg"
+              alt="Stylish apparel from TJ APPARELS"
+            />
+
+            <div class="about-image-caption">
+              <span class="caption-icon">
+                <i class="fa-solid fa-shirt"></i>
+              </span>
+              <div>
+                <h3>Wear Your Style</h3>
+                <p>Make every outfit count.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-info">
+          <span class="section-tag">GET IN TOUCH</span>
+
+          <h2>Let's Talk <span>Fashion.</span></h2>
+
+          <p class="contact-intro">
+            Have a question about a product, your order, or our collection? We'd
+            love to hear from you. Send us a message and we'll be happy to help.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <a href="mailto:olatunjidboss@gmail.com">
+                  <i class="fa-solid fa-envelope"></i>
+                </a>
+              </div>
+              <div>
+                <a href="mailto:olatunjidboss@gmail.com">
+                  <h3>Email Us</h3>
+                </a>
+
+                <p>Send us your questions and enquiries.</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <a href="tel:+2349116941103">
+                  <i class="fa-solid fa-box"></i>
+                </a>
+              </div>
+              <div>
+                <a href="tel:+2349116941103">
+                  <h3>Order Support</h3>
+                </a>
+                <p>Need help with a purchase? We're here to help.</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <a href="tel:+2349116941103">
+                  <i class="fa-solid fa-clock"></i>
+                </a>
+              </div>
+              <div>
+                <a href="tel:+2349116941103">
+                  <h3>Customer Care</h3>
+                </a>
+                <p>We're happy to answer your questions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <h3>Send Us a Message</h3>
+          <p class="form-description">
+            Fill in the details below to get in touch with us.
+          </p>
+
+          <form
+            class="contact-form"
+            id="contact-form"
+            action="https://formspree.io/f/xyzdozyl"
+            method="POST"
+          >
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Full Name</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">Email Address</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <select id="contact-subject" name="subject" required>
+                <option value="" disabled selected>
+                  Select an enquiry type
+                </option>
+                <option value="product">Product Enquiry</option>
+                <option value="order">Order Support</option>
+                <option value="delivery">Delivery Question</option>
+                <option value="returns">Returns and Exchanges</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Your Message</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                rows="6"
+                placeholder="How can we help you?"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="contact-submit-btn">
+              Send Message
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="#" class="footer-logo"> <span>TJ APPARELS</span> </a>
+
+          <p>
+            Discover your style with TJ APPARELS. From everyday essentials to
+            standout pieces, find fashion that matches your personality and
+            confidence.
+          </p>
+
+          <div class="footer-socials">
+            <a
+              href="https://web.facebook.com/Okunola2gud"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a
+              href="https://github.com/OkIbrahim"
+              target="_blank"
+              aria-label="Github"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/okunola-ibrahim-126427295/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a
+              href="https://x.com/TheRealOkunola"
+              target="_blank"
+              aria-label="X"
+            >
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#products">Shop Products</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Shop Categories -->
+        <div class="footer-column">
+          <h3>Shop Categories</h3>
+
+          <ul>
+            <li><a href="#products" data-category="shirts">Shirts</a></li>
+            <li><a href="#products" data-category="jeans">Jeans</a></li>
+            <li><a href="#products" data-category="jackets">Jackets</a></li>
+            <li><a href="#products" data-category="shoes">Shoes</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Support -->
+        <div class="footer-column">
+          <h3>Customer Care</h3>
+
+          <ul>
+            <li><a href="#contact">Help & Enquiries</a></li>
+            <li><a href="#contact">Order Support</a></li>
+            <li><a href="#contact">Delivery Questions</a></li>
+            <li><a href="#contact">Returns & Exchanges</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="footer-year"></span> TJ APPARELS. All rights
+          reserved.
+        </p>
+
+        <a href="#" class="back-to-top">
+          Back to top <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+    </footer>
+
+    <!-- Add-to-Cart Success Notification -->
+    <div class="toast" id="cart-toast" role="status" aria-live="polite">
+      <i class="fa-solid fa-circle-check"></i>
+      <span id="toast-message"></span>
+    </div>
+
+    <!-- Order Confirmation Popup -->
+    <div class="order-overlay" id="order-overlay">
+      <div
+        class="order-popup"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="order-title"
+      >
+        <button
+          class="close-order-popup"
+          id="close-order-popup"
+          aria-label="Close confirmation"
+        >
+          &times;
+        </button>
+
+        <div class="success-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+
+        <h2 id="order-title">Order Confirmed!</h2>
+
+        <p>
+          Thank you for shopping with TJ APPARELS. Your order has been confirmed
+          successfully!
+        </p>
+
+        <button class="continue-shopping-btn" id="continue-shopping-btn">
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
