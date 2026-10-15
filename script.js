@@ -342,7 +342,8 @@ function showCartToast(productName) {
 function openNav() {
   navOverlay.classList.add("active");
   navBar.classList.add("active");
-  document.body.classList.add("nav-open");
+document.body.classList.add("nav-open");
+closeCart();
 }
 
 function closeNav() {
